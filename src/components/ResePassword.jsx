@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { UserDetailContext } from './userDetailContext';
-import Apiservice from '../common/Apiservice';
+import ApiService from '../common/ApiService';
 import { toast } from 'react-toastify';
 import UseLogout from '../components/CustomHooks/UseLogout'
 function ResePassword() {
@@ -16,7 +16,7 @@ function ResePassword() {
   const getData = async () => {
    
     try {
-      let res = await Apiservice.get(`forgetpass/getres/${id}/${token}`)
+      let res = await ApiService.get(`forgetpass/getres/${id}/${token}`)
       setMail(res.data.mail)   
     } catch (error) {
       toast.error(error.response.data.message)

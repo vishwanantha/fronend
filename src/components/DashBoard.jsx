@@ -3,14 +3,14 @@ import React, { useEffect, useState } from 'react'
 import Table from 'react-bootstrap/Table';
 import UseLogout from './CustomHooks/UseLogout';
 import { toast } from 'react-toastify';
-import Apiservice from '../common/Apiservice';
+import ApiService from '../common/ApiService';
 
 function DashBoard() {
     const logout=UseLogout();
     const [data, setData] = useState([])
     const getData = async () => {
         try {
-            const res = await Apiservice.get('/getAll');
+            const res = await ApiService.get('/getAll');
             console.log(res);
             if (res.status == 200) {
                 setData(res.data.data)

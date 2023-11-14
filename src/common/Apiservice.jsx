@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const Apiservice=axios.create(
+const ApiService=axios.create(
   {
     baseURL:`${import.meta.env.VITE_API_URL}`,
     headers:{
@@ -18,4 +18,4 @@ const Apiservice=axios.create(
 
     return config
  })
- export default Apiservice
+ export default ApiService

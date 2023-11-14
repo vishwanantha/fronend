@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import { useNavigate } from 'react-router-dom';
 import { UserDetailContext } from './userDetailContext';
-import Apiservice from '../common/Apiservice';
+import ApiService from '../common/ApiService';
 import { toast } from 'react-toastify';
 function Forget() {
 
@@ -13,7 +13,7 @@ function Forget() {
   const mailSend = async () => {
    
    try {
-    const res= await Apiservice.post('/forgetpass', { email: mail })
+    const res= await ApiService.post('/forgetpass', { email: mail })
     if(res.status===200){
      toast.success('check your mail')
     } 

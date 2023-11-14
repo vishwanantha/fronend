@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
-import Apiservice from '../common/Apiservice';
+import ApiService from '../common/ApiService';
 import UseLogout from './CustomHooks/UseLogout';
 
 function Login() {
@@ -11,7 +11,7 @@ function Login() {
     const logOut=UseLogout
     const loginVerify = async (e) => {
         e.preventDefault();
-        const res = await Apiservice.post('/login', {
+        const res = await ApiService.post('/login', {
             mail: email,
             password: password
         })

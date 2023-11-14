@@ -1,6 +1,6 @@
 import { Formik } from 'formik'
 import React from 'react'
-import Apiservice from '../common/Apiservice'
+import ApiService from '../common/ApiService'
 import * as Yup from 'yup'
 import { Button, Form } from 'react-bootstrap'
 import { toast } from 'react-toastify'
@@ -9,7 +9,7 @@ function CreateUser() {
 const navigate=useNavigate();
     const submitData = async (value) => {
       try {
-        const res=  await Apiservice.post('/usercreate', value);
+        const res=  await ApiService.post('/usercreate', value);
         if(res.status===201){
             toast.success('successfully account created')
            
